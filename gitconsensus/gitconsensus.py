@@ -7,6 +7,7 @@ from gitconsensus import config
 from gitconsensus.repository import Repository
 import string
 
+
 @click.group()
 @click.pass_context
 def cli(ctx):
@@ -18,6 +19,7 @@ def cli(ctx):
 def auth():
     username = click.prompt('Username')
     password = click.prompt('Password', hide_input=True)
+
     def twofacallback(*args):
         return click.prompt('2fa Code')
 
